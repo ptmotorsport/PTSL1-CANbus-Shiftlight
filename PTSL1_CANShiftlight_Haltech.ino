@@ -1,6 +1,6 @@
 // PT Motorsport AU - CAN shift light project - (c) 2023 Peter Nowell
 // Released under the GPLv3 license
-
+// HALTEECH VERSION
 // NeoPixel Ring simple sketch (c) 2013 Shae Erisson
 // Released under the GPLv3 license to match the rest of the Adafruit NeoPixel library
 
