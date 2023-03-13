@@ -11,6 +11,12 @@ Thank you for your support! We greatly appreciate you spreading the word about o
 
 This PT Motorsport AU Shift Light module is a CANbus controlled shift light. It uses messages from the vehicle's CANbus to determine the engine’s RPM and illuminate the neopixels in a shift light pattern as dictated by you, the programmer.
 
+# Supported ECUs
+The following ECUs are currently supported - download the appropriate .ino file to suit your ECU
+
+- Haltech
+- ECU Master
+
 # Licence
 Copyright (c) 2023 - PT Motorsport AU Pty Ltd
 
