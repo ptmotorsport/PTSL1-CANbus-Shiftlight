@@ -17,6 +17,10 @@ The following ECUs are currently supported - download the appropriate .ino file 
 - Haltech
 - ECU Master
 
+# 3D Printed Housing
+STL Files are avaliable for purchase from the PT Motorsport AU website
+https://www.ptmotorsport.com.au/product/canbus-shift-light-diy-project-digital-download/
+
 # Licence
 Copyright (c) 2023 - PT Motorsport AU Pty Ltd
 
