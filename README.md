@@ -16,6 +16,7 @@ The following ECUs are currently supported - download the appropriate .ino file 
 
 - Haltech
 - ECU Master
+- OBD2
 
 # 3D Printed Housing
 STL Files are avaliable for purchase from the PT Motorsport AU website
