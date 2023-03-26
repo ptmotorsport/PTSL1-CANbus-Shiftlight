@@ -48,11 +48,27 @@ Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 unsigned int ShiftLightsOn[NUMPIXELS]; // define how many lights should be on
 
 void setup() {
+  {
   pixels.begin(); // INITIALIZE NeoPixel strip object (REQUIRED)
   pixels.clear();
-  pixels.fill(pixels.Color(10, 0, 0)); // Faint red
-  pixels.show();
+  pixels.show(); // Initialize all pixels to 'off'
+  
+  step = (ENDRPM - STARTRPM) / NUMPIXELS; //maps the range of RPM the LEDs will cover from the STARTRPM and ENDRPM
+  
+for(int i=0; i<NUMPIXELS; i++) {
+    pixels.setPixelColor(i, 10, 0, 0);
+    pixels.show();
+    delay(50);
+    pixels.setPixelColor(i, 0, 0, 0);
+  }
 
+  // Right to left
+  for(int i=NUMPIXELS-1; i>=0; i--) {
+    pixels.setPixelColor(i, 10, 0, 0);
+    pixels.show();
+    delay(50);
+    pixels.setPixelColor(i, 0, 0, 0);
+  }
   SPI.begin();
   
   Serial.begin(9600);
@@ -62,8 +78,6 @@ void setup() {
   mcp2515.setNormalMode();                   // Sets CAN at normal mode
 
  // pinMode(5, OUTPUT);
-
-  step = (ENDRPM - STARTRPM) / NUMPIXELS; //maps the range of RPM the LEDs will cover from the STARTRPM and ENDRPM
 
   for (int i = 0; i < NUMPIXELS; i++) {
     ShiftLightsOn[i] = STARTRPM + (step * i);
@@ -79,6 +93,10 @@ void setup() {
   txcanMsg1.data[6] = 0x00;
   txcanMsg1.data[7] = 0x00;
 }
+  pixels.clear();
+  pixels.fill(pixels.Color(1, 0, 0)); // Faint red
+  pixels.show();
+  }
 void loop() {
   pixels.clear();
    mcp2515.sendMessage(&txcanMsg1);
@@ -125,5 +143,5 @@ void loop() {
       }
     }
   }
-  delay(100); //added delay to slow the CAN tx and not crash the CANbus.
+  delay(100);
 }
