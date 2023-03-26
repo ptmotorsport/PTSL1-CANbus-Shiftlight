@@ -86,7 +86,7 @@ void loop() {
   if (mcp2515.readMessage(&rxcanMsg1) == MCP2515::ERROR_OK) {
 
     //CAN Message 1, dettermine the CAN ID and Bytes of the message
-    if(rxcanMsg1.can_id == 0x7E8) { // CAN ID (0x7E8 is OBDII default)
+    if(rxcanMsg1.can_id == 0x7E8 && rxcanMsg1.data[0] == 0x02 && rxcanMsg1.data[1] == 0x01 && rxcanMsg1.data[2] == 0x0C) { // CAN ID (0x7E8 is OBDII default) (Buffer: 2 Bytes && Current Data && RPM)
     
       int x1 = rxcanMsg1.data[3]; //byte 3
       int x2 = rxcanMsg1.data[4]; //byte 4
@@ -125,5 +125,5 @@ void loop() {
       }
     }
   }
-  delay(100);
+  delay(100); //added delay to slow the CAN tx and not crash the CANbus.
 }
