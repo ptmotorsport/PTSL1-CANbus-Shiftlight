@@ -21,6 +21,7 @@ The following ECUs are currently supported - download the appropriate .ino file 
 # 3D Printed Housing
 STL Files are avaliable for purchase from the PT Motorsport AU website
 https://www.ptmotorsport.com.au/product/canbus-shift-light-diy-project-digital-download/
+If you choose to design your own, show us what you made! @ptmotorsportau on instagram, we'd love to see it!
 
 # Licence
 Copyright (c) 2023 - PT Motorsport AU Pty Ltd
