@@ -76,13 +76,17 @@ void loop() {
     //CAN Message 1, dettermine the CAN ID and Bytes of the message
     if(canMsg1.can_id == 0x0A5) { // CAN ID
     
-      int x1 = canMsg1.data[0]; //byte 0
-      int x2 = canMsg1.data[1]; //byte 1
+      // offset is 5 (length 2)
+      int x1 = canMsg1.data[5]; //byte 0
+      int x2 = canMsg1.data[6]; //byte 1
+
+      Serial.print(x1, HEX);
+      Serial.print(x2, HEX);
       int RPM = (x2 + (x1 << 8)) / 4; //put them together (Swap x2 and x1 to change endianness of message) and divide the value by 4
 
       // Print to serial (uncomment for debugging)
       // Serial.println("RPM");   
-      // Serial.println(RPM); 
+      Serial.println(RPM); 
 
       if (RPM < ENDRPM) {
         // Normal operating range
