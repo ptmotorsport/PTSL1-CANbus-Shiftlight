@@ -78,7 +78,7 @@ void loop() {
     
       int x1 = canMsg1.data[0]; //byte 0
       int x2 = canMsg1.data[1]; //byte 1
-      int RPM = (x2 + (x1 << 8)); //put them together (Swap x2 and x1 to change endianness of message)
+      int RPM = (x2 + (x1 << 8)) / 4; //put them together (Swap x2 and x1 to change endianness of message) and divide the value by 4
 
       // Print to serial (uncomment for debugging)
       // Serial.println("RPM");   
