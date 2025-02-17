@@ -1,3 +1,4 @@
+// Thank You @jackbrown89 for adding this PT CAN support for GR Supra
 // PT Motorsport AU - CAN shift light project - (c) 2023 Peter Nowell
 // Released under the GPLv3 license
 // PT-CAN VERSION (based on the A90 GR Supra)
